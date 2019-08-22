@@ -57,3 +57,4 @@ class Person {
 
 const Alison = new Person('Alison');
 console.log(Alison);
+console.log(Alison.greet());
