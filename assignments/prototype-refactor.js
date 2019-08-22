@@ -44,7 +44,6 @@ nextPerson.prototype.poop = function() {
 }
 
 // refactoring using class and extends
-
 class Person {
     constructor(name) {
         this.name = name;
@@ -58,3 +57,33 @@ class Person {
 const Alison = new Person('Alison');
 console.log(Alison);
 console.log(Alison.greet());
+
+// declaring a 2nd class called Student
+class Student extends Person {
+    constructor(name) {
+        super(name);
+    }
+
+    greet() {
+        console.log(`Hello, my name is ${this.name} and I'm a new student at Lambda!`);
+    }
+}
+
+const Brian = new Student('Brian');
+console.log(Brian);
+console.log(Brian.greet());
+
+// creating a 3rd class called Teacher
+class Teacher extends Person {
+    constructor(name) {
+        super(name);
+    }
+
+    greet() {
+        console.log(`Hello, my name is ${this.name} and I teach Javascript at Lambda!`);
+
+    }
+}
+const Toni = new Teacher('Toni');
+console.log(Toni);
+console.log(Toni.greet());
