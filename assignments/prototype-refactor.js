@@ -16,29 +16,44 @@ function onePerson(name, age) {
     // }
 };
 
-Person.prototype.greet = function() {
+onePerson.prototype.greet = function() {
     return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
 }
 
-const Alison = new onePerson('Alison', 21);
-console.log(Alison.greet());
+const Mary = new onePerson('Mary', 21);
+console.log(Mary.greet());
 
 
 //Using this one instead: Person
-function Person(personName, personAge) {
-    this.name = personName;
-    this.age = personAge;
+function nextPerson(name, age) {
+    this.name = name;
+    this.age = age;
     this.stomach = [];
 }
 
-Person.prototype.greet = function() {
+nextPerson.prototype.greet = function() {
     return `Hello, I am ${this.name} and I am ${this.age} years old`;
 }
 
-Person.prototype.eat = function(eatFood) {
+nextPerson.prototype.eat = function(eatFood) {
     return this.stomach.push(eatFood);
 }
 
-Person.prototype.poop = function() {
+nextPerson.prototype.poop = function() {
     return this.stomach = [];
 }
+
+// refactoring using class and extends
+
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+
+    greet() {
+        console.log(`Hello, my name is ${this.name}!`);
+    }
+}
+
+const Alison = new Person('Alison');
+console.log(Alison);
