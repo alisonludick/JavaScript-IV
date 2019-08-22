@@ -8,7 +8,7 @@ Prototype Refactor
 
 */
 
-function Person(name, age) {
+function onePerson(name, age) {
     this.name = name;
     this.age = age;
     // this.greet = function() {
@@ -20,5 +20,25 @@ Person.prototype.greet = function() {
     return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
 }
 
-const Alison = new Person('Alison', 21);
+const Alison = new onePerson('Alison', 21);
 console.log(Alison.greet());
+
+
+//Using this one instead: Person
+function Person(personName, personAge) {
+    this.name = personName;
+    this.age = personAge;
+    this.stomach = [];
+}
+
+Person.prototype.greet = function() {
+    return `Hello, I am ${this.name} and I am ${this.age} years old`;
+}
+
+Person.prototype.eat = function(eatFood) {
+    return this.stomach.push(eatFood);
+}
+
+Person.prototype.poop = function() {
+    return this.stomach = [];
+}
