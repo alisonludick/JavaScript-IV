@@ -65,7 +65,7 @@ class Instructor extends nicePerson {
   * `sprintChallenge` similar to PRAssignment but logs out `student.name has begun sprint challenge on {subject}`
 */
 
-class Student extends nicePerson {
+class niceStudent extends nicePerson {
     constructor(props) {
         super(props);
         this.previousBackground = props.previousBackground;
